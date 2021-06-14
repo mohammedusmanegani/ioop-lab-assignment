@@ -17,6 +17,75 @@ public class testScript {
 	}
 	
 	/*
+	* Function Name: fnTest1
+	* Author: Niraj
+	* Function Parameter: none
+	* Return Type: void
+	* Stack State: empty
+	* Function Description: successful if the stack is empty else test case fails.
+	*/
+	public void fnTest1(){
+		Vector<Integer> vector = obj.getMagazineStack();
+		if(!vector.isEmpty()){
+			System.out.println("Testcase-1 Fails, State = empty, Service = getMagazineStack()");
+		}else{
+			System.out.println("Testcase-1 Successful, State = empty, Service = getMagazineStack()");
+		}
+	}
+	
+	/*
+	* Function Name: fnTest2
+	* Author: Niraj
+	* Function Parameter: none
+	* Return Type: void
+	* Stack State: empty
+	* Function Description: successful if the bullet is pushed on top of the stack else fails.
+	*/
+	public void fnTest2(){
+		int random = rand.nextInt(9);
+		int flag = obj.reFillMagazine(random);
+		if(flag != 1){
+			System.out.println("Testcase-2 Fails, State = empty, Service = reFillMagazine()");
+		}else{
+			System.out.println("Testcase-2 Successful, State = empty, Service = reFillMagazine()");
+		}
+	}
+	
+	/*
+	* Function Name: fnTest3
+	* Author: Niraj
+	* Function Parameter: none
+	* Return Type: void
+	* Stack State: NENF
+	* Function Description: successful if the stack is neither empty nor full and fails if the stack is empty or full.
+	*/
+	public void fnTest3(){
+		Vector<Integer> vector = obj.getMagazineStack();
+		if(vector.isEmpty() || vector.size() == 5){
+			System.out.println("Testcase-3 Fails, State = empty/full, Service = getMagazineStack()");
+		}else{
+			System.out.println("Testcase-3 Successful, State = NENF, Service = getMagazineStack()");
+		}
+	}
+	
+	/*
+	* Function Name: fnTest4
+	* Author: Niraj
+	* Function Parameter: none
+	* Return Type: void
+	* Stack State: NENF
+	* Function Description: successful if the top-most bullet is popped from the stack else fails.
+	*/
+	public void fnTest4(){
+		String message = obj.fireBullet();
+		if(message.equals("#Stack Empty")){
+			System.out.println("Testcase-4 Fails, State = empty, Service = fireBullet()");
+		}else{
+			System.out.println("Testcase-4 Successful, State = empty/NENF, Service = fireBullet()");
+		}
+	}
+	
+	/*
 	* Function Name: fnTest5
 	* Author: Mohammed Usman E Gani
 	* Function Parameter: none
@@ -108,8 +177,7 @@ public class testScript {
 		}
 	}
   
-  
-  /*
+  	/*
 	* Function Name: storeMax
 	* Author: Mukesh
 	* Function Parameter: none
@@ -162,6 +230,5 @@ public class testScript {
 		test.fnTest7();
 		test.fnTest8();
 		test.fnTest9();
-	}
-  
+	} 
 }
