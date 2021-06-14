@@ -15,6 +15,80 @@ public class testScript {
 	public testScript(){
 		obj = new magazine();
 	}
+	
+	/*
+	* Function Name: fnTest5
+	* Author: Mohammed Usman E Gani
+	* Function Parameter: none
+	* Return Type: void
+	* Stack State: NENF
+	* Function Description: successful if the bullet is pushed on top of the stack else fails.
+	*/
+	public void fnTest5(){
+		int random = rand.nextInt(9);
+		int flag = obj.reFillMagazine(random);
+		if(flag != 1){
+			System.out.println("Testcase-5 Fails, State = NENF, Service = reFillMagazine()");
+		}else{
+			System.out.println("Testcase-5 Successful, State = NENF/full, Service = reFillMagazine()");
+		}
+		storeMax();
+	}
+	
+	/*
+	* Function Name: fnTest6
+	* Author: Mohammed Usman E Gani
+	* Function Parameter: none
+	* Return Type: void
+	* Stack State: full
+	* Function Description: successful if the stack is full else fails.
+	*/
+	public void fnTest6(){
+		Vector<Integer> vector = obj.getMagazineStack();
+		if(vector.size() != 5){
+			System.out.println("Testcase-6 Fails, State = NENF/empty, Service = getMagazineStack()");
+		}else{
+			System.out.println("Testcase-6 Successful, State = FULL, Service = getMagazineStack()");
+		}
+	}
+	
+	/*
+	* Function Name: fnTest7
+	* Author: Mohammed Usman E Gani
+	* Function Parameter: none
+	* Return Type: void
+	* Stack State: full
+	* Function Description: successful if the top-most bullet from the stack is popped else fails.
+	*/
+	public void fnTest7(){
+		String message = obj.fireBullet();
+		if(message.equals("#Stack Empty")){
+			System.out.println("Testcase-7 Fails, State = empty, Service = fireBullet()");
+		}else{
+			System.out.println("Testcase-7 Successful, State = NENF, Service = fireBullet()");
+		}
+		storeMax();
+	}
+	
+	/*
+	* Function Name: fnTest9
+	* Author: Mukesh
+	* Function Parameter: none
+	* Return Type: void
+	* Stack State: full
+	* Function Description: fails if the stack is full and successful if the element is pushed on top of the stack.
+	*/
+	public void fnTest9() {
+		storeMax();
+		Vector<Integer> vector = obj.getMagazineStack();
+		int random = rand.nextInt(9);
+		int flag = obj.reFillMagazine(random);
+		if(vector.size() >= 5){
+			System.out.println("Testcase-9 Fails, State = full, Service = getMagazineStack()");
+		}else{
+			System.out.println("Testcase-9 successful, State = NENF, Service = getMagazineStack()");
+		}
+	}
   
   
   /*
