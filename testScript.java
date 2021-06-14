@@ -143,5 +143,25 @@ public class testScript {
 		}
 		return;
 	}
+	
+	/*
+	* Function Name: main
+	* Author: Mohammed Usman E Gani
+	* Function Parameter: String
+	* Return Type: void
+	* Function Description: It is a main function where we will be calling the test functions.
+	*/
+	public static void main(String...args){
+		testScript test = new testScript();
+		test.fnTest1();
+		test.fnTest2();
+		test.fnTest3();
+		test.fnTest4();
+		test.fnTest5();
+		test.fnTest6();
+		test.fnTest7();
+		test.fnTest8();
+		test.fnTest9();
+	}
   
 }
