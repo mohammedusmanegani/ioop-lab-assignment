@@ -71,6 +71,24 @@ public class testScript {
 	}
 	
 	/*
+	* Function Name: fnTest8
+	* Author: Mukesh
+	* Function Parameter: none
+	* Return Type: void
+	* Stack State: empty
+	* Function Description: fails if the stack is empty and successful if the top-most element is popped.
+	*/
+	public void fnTest8() {
+		minStack();
+		String message = obj.fireBullet();
+		if(message.equals("#Stack Empty")){
+			System.out.println("Testcase-8 Fails, State = empty, Service = fireBullet()");
+		}else{
+			System.out.println("Testcase-8 Successful, State = empty/NENF, Service = fireBullet()");
+		}
+	}
+	
+	/*
 	* Function Name: fnTest9
 	* Author: Mukesh
 	* Function Parameter: none
